@@ -1,9 +1,41 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'; // DONT FORGET to import this!
+import Button from 'react-bootstrap/Button';
 
 export default function TicTacToe() {
   const [turn, setTurn] = useState('X');
   const [squares, setSquares] = useState(Array(9).fill(''));
+  const [winner, setWinner] = useState();
+
+  const checkForWinner = (boxes) => {
+    const combos = {
+      across: [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+      ],
+      down: [
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+      ],
+      diagnol: [
+        [0, 4, 8],
+        [2, 4, 6],
+      ],
+    };
+
+    // eslint-disable-next-line no-restricted-syntax, guard-for-in
+    for (const combo in combos) {
+      combos[combo].forEach((pattern) => {
+        if (boxes[pattern[0]] === '' || boxes[pattern[1]] === '' || boxes[pattern[3]] === '') {
+          // do nothing
+        } else if (boxes[pattern[0]] === boxes[pattern[1]] && boxes[pattern[1]] === boxes[pattern[2]]) {
+          setWinner(boxes[pattern[0]]);
+        }
+      });
+    }
+  };
 
   const handleClick = (num) => {
     const boxes = [...squares];
@@ -12,6 +44,7 @@ export default function TicTacToe() {
       alert('Square Already Taken. Please Choose Another.');
       return;
     }
+
     if (turn === 'X') {
       boxes[num] = 'X';
       setTurn('O');
@@ -20,6 +53,7 @@ export default function TicTacToe() {
       setTurn('X');
     }
 
+    checkForWinner(boxes);
     setSquares(boxes);
   };
 
@@ -30,11 +64,16 @@ export default function TicTacToe() {
     num: PropTypes.number.isRequired,
   };
 
+  const handleRestart = () => {
+    setWinner(null);
+    setSquares(Array(9).fill(''));
+  };
+
   return (
     <div>
       <h1>Tic Tac Toe</h1>
+      <h6>Whose Turn: {turn}</h6>
       <table>
-        Whose Turn: {turn}
         <tbody>
           <tr>
             <Square num={0} />
@@ -53,6 +92,12 @@ export default function TicTacToe() {
           </tr>
         </tbody>
       </table>
+      {winner && (
+        <>
+          <h3>{winner} is the winner! Congratulations!!</h3>
+          <Button variant="success" onClick={() => handleRestart()}>Play Again</Button>{' '}
+        </>
+      )}
     </div>
   );
 }
