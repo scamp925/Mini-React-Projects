@@ -1,3 +1,5 @@
+import TicTacToe from '../components/TicTacToe';
+
 function Home() {
   return (
     <div
@@ -10,6 +12,7 @@ function Home() {
       }}
     >
       <h1>Welcome Home! </h1>
+      <TicTacToe />
     </div>
   );
 }
