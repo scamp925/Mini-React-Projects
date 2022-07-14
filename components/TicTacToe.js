@@ -8,6 +8,10 @@ export default function TicTacToe() {
   const handleClick = (num) => {
     const boxes = [...squares];
 
+    if (squares[num] !== '') {
+      alert('Square Already Taken. Please Choose Another.');
+      return;
+    }
     if (turn === 'X') {
       boxes[num] = 'X';
       setTurn('O');
