@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import PropTypes from 'prop-types'; // DONT FORGET to import this!
 
 export default function TicTacToe() {
   const [turn, setTurn] = useState('X');
@@ -23,11 +23,7 @@ export default function TicTacToe() {
   const Square = ({ num }) => <td onClick={() => handleClick(num)}>{squares[num]}</td>;
 
   Square.propTypes = {
-    num: propTypes.integer,
-  };
-
-  Square.defaultProps = {
-    num: 0,
+    num: PropTypes.number.isRequired,
   };
 
   return (
