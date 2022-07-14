@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function TicTacToe() {
-  const Cell = () => <td>-</td>;
+  const Square = () => <td>-</td>;
 
   return (
     <div>
@@ -9,19 +9,19 @@ export default function TicTacToe() {
       <table>
         <tbody>
           <tr>
-            <Cell />
-            <Cell />
-            <Cell />
+            <Square />
+            <Square />
+            <Square />
           </tr>
           <tr>
-            <Cell />
-            <Cell />
-            <Cell />
+            <Square />
+            <Square />
+            <Square />
           </tr>
           <tr>
-            <Cell />
-            <Cell />
-            <Cell />
+            <Square />
+            <Square />
+            <Square />
           </tr>
         </tbody>
       </table>
