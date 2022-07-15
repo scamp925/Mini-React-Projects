@@ -9,7 +9,8 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      <h1>Welcome Home! </h1>
+      <h1>Welcome to Mini React Projects </h1>
+      <h2>By Sariah Campopiano </h2>
     </div>
   );
 }
