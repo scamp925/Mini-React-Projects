@@ -20,3 +20,16 @@ a {
 body {
   background-color: #88effd;
 }
+
+table td {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+}
+
+.tic-tac-toe-btn {
+  margin-top: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
