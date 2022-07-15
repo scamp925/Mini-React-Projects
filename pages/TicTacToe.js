@@ -70,7 +70,15 @@ export default function TicTacToe() {
   };
 
   return (
-    <div>
+    <div
+      className="text-center d-flex flex-column justify-content-center align-content-center"
+      style={{
+        height: '90vh',
+        padding: '30px',
+        maxWidth: '400px',
+        margin: '0 auto',
+      }}
+    >
       <h1>Tic Tac Toe</h1>
       <h6>Whose Turn: {turn}</h6>
       <table>
@@ -97,7 +105,7 @@ export default function TicTacToe() {
           <h3>{winner} is the winner! Congratulations!!</h3>
         </>
       )}
-      <Button variant="success" onClick={() => handleRestart()}>{winner ? 'Play Again' : 'Restart Game'}</Button>{' '}
+      <Button variant="success" className="tic-tac-toe-btn" onClick={() => handleRestart()}>{winner ? 'Play Again' : 'Restart Game'}</Button>{' '}
     </div>
   );
 }

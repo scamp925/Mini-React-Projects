@@ -1,4 +1,6 @@
-function Home() {
+import React from 'react';
+
+export default function Bingo() {
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -9,9 +11,7 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      <h1>Welcome Home! </h1>
+      <h1>Future Page of Bingo Game</h1>
     </div>
   );
 }
-
-export default Home;
