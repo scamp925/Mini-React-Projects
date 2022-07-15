@@ -95,9 +95,9 @@ export default function TicTacToe() {
       {winner && (
         <>
           <h3>{winner} is the winner! Congratulations!!</h3>
-          <Button variant="success" onClick={() => handleRestart()}>Play Again</Button>{' '}
         </>
       )}
+      <Button variant="success" onClick={() => handleRestart()}>{winner ? 'Play Again' : 'Restart Game'}</Button>{' '}
     </div>
   );
 }
