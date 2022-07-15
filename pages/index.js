@@ -10,7 +10,6 @@ function Home() {
       }}
     >
       <h1>Welcome to Mini React Projects </h1>
-      <h2>By Sariah Campopiano </h2>
     </div>
   );
 }
