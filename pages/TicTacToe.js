@@ -28,7 +28,7 @@ export default function TicTacToe() {
     // eslint-disable-next-line no-restricted-syntax, guard-for-in
     for (const combo in combos) {
       combos[combo].forEach((pattern) => {
-        if (boxes[pattern[0]] === '' || boxes[pattern[1]] === '' || boxes[pattern[3]] === '') {
+        if (boxes[pattern[0]] === '' || boxes[pattern[1]] === '' || boxes[pattern[2]] === '') {
           // do nothing
         } else if (boxes[pattern[0]] === boxes[pattern[1]] && boxes[pattern[1]] === boxes[pattern[2]]) {
           setWinner(boxes[pattern[0]]);
