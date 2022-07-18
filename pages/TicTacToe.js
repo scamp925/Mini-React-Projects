@@ -25,6 +25,7 @@ export default function TicTacToe() {
       ],
     };
 
+    // for...in loop interates over an object (combos in this case), then I am looping over the arrays in the obj
     // eslint-disable-next-line no-restricted-syntax, guard-for-in
     for (const combo in combos) {
       combos[combo].forEach((pattern) => {
@@ -39,6 +40,7 @@ export default function TicTacToe() {
 
   const handleClick = (num) => {
     const boxes = [...squares];
+    // Using the spread operator b/c I need boxes to include all the elements from squares
 
     if (squares[num] !== '') {
       alert('Square Already Taken. Please Choose Another.');
