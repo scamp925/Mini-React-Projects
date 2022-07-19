@@ -102,7 +102,7 @@ export default function TicTacToe() {
           </tr>
         </tbody>
       </table>
-      {winner && (
+      {winner && ( // && is another conditional. This one is if winner is true then do what's in the (); whereas, ternary is more of an if... else conditional
         <>
           <h3>{winner} is the winner! Congratulations!!</h3>
         </>
